@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pantalla de Inicio - Concesionaria</title>
+  <link rel="stylesheet" href="Pagina_principal.css">
+</head>
+<body>
+    <div class="barra-superior">
+        <div class="logo">
+          <img src="Imagenes/pngwing.com.png" alt="Logotipo de la concesionaria">
+          <H1>Consecionaria Martinez
+          </H1>
+        </div>
+        <div class="botones-barra">
+          <!-- Botón de Notificaciones -->
+          <button class="btn-icon icono-campana" title="Notificaciones" onclick="abrirModal('notificacionesModal')">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512">
+              <path fill="#ffffff" d="M224 0c-17.7 0-32 14.3-32 32l0 19.2C119 66 64 130.6 64 208l0 18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416l384 0c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8l0-18.8c0-77.4-55-142-128-156.8L256 32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3l-64 0-64 0c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/>
+            </svg>
+          </button>
+          <!-- Botón de Configuración -->
+          <button class="btn-icon icono-configuracion" title="Configuración" onclick="abrirModal('configuracionesModal')">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 512 512">
+              <path fill="#ffffff" d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"/>
+            </svg>
+          </button>
+          <!-- Botón de Usuarios -->
+          <button class="btn-icon icono-usuario" title="Usuarios" onclick="abrirModal('usuariosModal')">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512">
+              <path fill="#FFFFFF" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+
+  <main class="tablero-principal">
+    <section class="panel-informativo">
+      <h2>Inventario Total</h2>
+      <p class="inventario-total">Autos disponibles: <span class="total-num">120</span></p>
+      <div class="estado-autos">
+        <span class="disponibles">🟢 5</span>
+        <span class="vendidos">🔴 5</span>
+        <span class="revision">🟡 6</span>
+      </div>
+    </section>
+
+    <section class="panel-informativo">
+      <h2>Ventas Recientes</h2>
+      <ul class="ventas-recientes">
+        <li><strong>Volkswagen Jetta 2017</strong> vendido - 15/12/2024</li>
+        <li><strong>Ford Fiesta 2020</strong> vendido - 05/12/2024</li>
+        <li><strong>Mercedes-Benz Clase A 2022</strong> vendido - 10/12/2024</li>
+      </ul>
+    </section>
+    
+
+    <section class="panel-informativo">
+      <h2>Autos en Mantenimiento</h2>
+      <p>Número de autos: <span class="mantenimiento-num">6</span></p>
+    </section>
+
+    <section class="panel-informativo">
+      <h2>Gráficas de Ventas</h2>
+      <div class="grafica-ventas">
+        <iframe src="pagina_estadisticas.html?mostrar=grafica-ventaM" frameborder="0" style="width: 100%; height: 300px;"></iframe>
+      </div>
+    </section>
+    
+    
+
+    <div class="botones-accion">
+        <a href="pagina_gestionInventarios.html">
+            <button class="btn">Ver Inventario Completo</button>
+        </a>
+        
+        <a href="pagina_registro.html"> 
+            <button class="btn">Agregar Nuevo Auto</button> 
+        </a>
+        <a href="pagina_Ventas.html">
+            <button class="btn">Registrar Venta</button>
+        </a>
+        <a href="pagina_estadisticas.html">
+          <button class="btn">Ver Reporte</button>
+      </a>
+    </div>
+  </main>
+ <!-- Modales -->
+<div id="notificacionesModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="cerrarModal('notificacionesModal')">&times;</span>
+    <h2>Notificaciones</h2>
+    <ul>
+      <li>Revisión programada para <strong>Honda Civic 2021</strong></li>
+      <li>Revisión programada para <strong>Chevrolet Spark 2019</strong></li>
+      <li>Revisión programada para <strong>Subaru Impreza 2019</strong></li>
+      <li>El mantenimiento de <strong>Kia Soul 2021</strong> ha concluido</li>
+      <li><strong>Volkswagen Jetta 2017</strong> vendido el 15/12/2024</li>
+      <li><strong>Ford Fiesta 2020</strong> vendido el 05/12/2024</li>
+      <li><strong>Mercedes-Benz Clase A 2022</strong> vendido el 10/12/2024</li>
+    </ul>
+  </div>
+</div>
+
+  
+    <div id="configuracionesModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="cerrarModal('configuracionesModal')">&times;</span>
+        <h2>Configuraciones</h2>
+        <form>
+          <label for="tema">Tema de la aplicación:</label>
+          <select id="tema" name="tema">
+            <option value="claro">Claro</option>
+            <option value="oscuro">Oscuro</option>
+          </select>
+          <br><br>
+          <label for="idioma">Idioma:</label>
+          <select id="idioma" name="idioma">
+            <option value="es">Español</option>
+            <option value="en">Inglés</option>
+          </select>
+          <br><br>
+          <button type="submit">Guardar cambios</button>
+        </form>
+      </div>
+    </div>
+  
+    <div id="usuariosModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="cerrarModal('usuariosModal')">&times;</span>
+        <h2>Gestión de Usuarios</h2>
+        <button class="bton" onclick="abrirModal('nuevoUsuarioModal')">Agregar Nuevo Usuario</button>
+        <h3>Usuarios Existentes:</h3>
+        <ul>
+          <li>Gerente: Juan Pérez</li>
+          <li>Vendedor: María Gómez</li>
+          <li>Vendedor: Carlos Ruiz</li>
+        </ul>
+        <input type="text" id="filtroUsuarios" placeholder="Buscar usuario..." onkeyup="filtrarUsuarios()">
+
+      </div>
+    </div>
+    
+    <!-- Modal para Agregar Nuevo Usuario -->
+    <div id="nuevoUsuarioModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="cerrarModal('nuevoUsuarioModal')">&times;</span>
+        <h2>Agregar Nuevo Usuario</h2>
+        <form id="nuevoUsuarioForm">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required>
+          <br><br>
+          <label for="rol">Rol:</label>
+          <select id="rol" name="rol" required>
+            <option value="gerente">Gerente</option>
+            <option value="vendedor">Vendedor</option>
+          </select>
+          <br><br>
+          <label for="email">Correo Electrónico:</label>
+          <input type="email" id="email" name="email" required>
+          <br><br>
+          <button type="submit">Guardar Usuario</button>
+        </form>
+      </div>
+    </div>
+    
+
+
+
+
+    <!--------------------------------------------------------------- Java Script ---------------------------------------------------------------->
+   
+    <script>
+      // Función para abrir un modal
+      function abrirModal(id) {
+        document.getElementById(id).style.display = "block";
+      }
+  
+      // Función para cerrar un modal
+      function cerrarModal(id) {
+        document.getElementById(id).style.display = "none";
+      }
+  
+      // Función para agregar un nuevo usuario (puedes implementar la lógica)
+      function agregarUsuario() {
+        alert("Función para agregar un nuevo usuario aún no implementada.");
+      }
+      // Función para manejar el formulario de nuevo usuario
+      document.getElementById('nuevoUsuarioForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Evita que la página se recargue
+
+      const nombre = document.getElementById('nombre').value;
+      const rol = document.getElementById('rol').value;
+      const email = document.getElementById('email').value;
+
+      // Agregar el nuevo usuario a la lista
+      const listaUsuarios = document.querySelector('#usuariosModal ul');
+      const nuevoUsuario = document.createElement('li');
+      nuevoUsuario.textContent = `${rol.charAt(0).toUpperCase() + rol.slice(1)}: ${nombre} (${email})`;
+      listaUsuarios.appendChild(nuevoUsuario);
+
+      // Cierra el modal y limpia el formulario
+      cerrarModal('nuevoUsuarioModal');
+      this.reset();
+      });
+    //------------------------------------Notificaciones -----------------------------------------------------------------------------------------------------
+      function agregarIndicadorNotificaciones() {
+      const campana = document.querySelector('.icono-campana');
+      const indicador = document.createElement('span');
+      indicador.classList.add('indicador');
+      indicador.textContent = '•';
+      campana.appendChild(indicador);
+    }
+    // Llama a esta función cuando haya nuevas notificaciones
+    agregarIndicadorNotificaciones();
+    //--------------------------------------Tema Oscuro ------------------------------------------------------
+    function cambiarTema() {
+    const tema = document.getElementById('tema').value;
+    document.body.className = tema === 'oscuro' ? 'tema-oscuro' : '';
+    }
+    document.getElementById('tema').addEventListener('change', cambiarTema);
+
+    //------------------------------ Tablero Principal---------------------------------------------------------
+    document.querySelectorAll('.panel-informativo').forEach((panel, index) => {
+    panel.style.animation = `fadeIn 0.5s ease ${index * 0.2}s forwards`;
+    });
+    //-------------------------------Acualizacion de tablas dinamicas------------------------------------------
+    function actualizarDatosInventario() {
+    const disponibles = Math.floor(Math.random() * 10);
+    const vendidos = Math.floor(Math.random() * 10);
+    const enRevision = Math.floor(Math.random() * 10);
+
+    document.querySelector('.total-num').textContent = disponibles + vendidos + enRevision;
+    document.querySelector('.disponibles').textContent = `🟢 ${disponibles}`;
+    document.querySelector('.vendidos').textContent = `🔴 ${vendidos}`;
+    document.querySelector('.revision').textContent = `🟡 ${enRevision}`;
+    } 
+    setInterval(actualizarDatosInventario, 60000); // Actualiza cada 60 segundos
+
+    // ----------------------------------Filtrado de usuarios ------------------------------------------------
+    function filtrarUsuarios() {
+    const filtro = document.getElementById('filtroUsuarios').value.toLowerCase();
+    const usuarios = document.querySelectorAll('#usuariosModal ul li');
+    usuarios.forEach(usuario => {
+    usuario.style.display = usuario.textContent.toLowerCase().includes(filtro) ? '' : 'none';
+   });
+    }
+    
+  //----------------------------------Mensaje de confirmacion ------------------------------------------------
+  function confirmarAccion(mensaje) {
+  return confirm(mensaje);
+  }
+  document.querySelector('.btn-eliminar').addEventListener('click', () => {
+    if (confirmarAccion('¿Estás seguro de que deseas eliminar este usuario?')) {
+      alert('Usuario eliminado.');
+    }
+  });
+
+
+    </script>
+  
+  
+  
+</body>
+</html>

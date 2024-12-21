@@ -1,0 +1,168 @@
+   <!-- Modales -->
+   <div id="notificacionesModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarModal('notificacionesModal')">&times;</span>
+      <h2>Notificaciones</h2>
+      <ul>
+        <li>Revisión programada para Auto A1</li>
+        <li>El mantenimiento de Auto B2 ha concluido</li>
+        <li>Auto C3 vendido el 03/11/2024</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="configuracionesModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarModal('configuracionesModal')">&times;</span>
+      <h2>Configuraciones</h2>
+      <form>
+        <label for="tema">Tema de la aplicación:</label>
+        <select id="tema" name="tema">
+          <option value="claro">Claro</option>
+          <option value="oscuro">Oscuro</option>
+        </select>
+        <br><br>
+        <label for="idioma">Idioma:</label>
+        <select id="idioma" name="idioma">
+          <option value="es">Español</option>
+          <option value="en">Inglés</option>
+        </select>
+        <br><br>
+        <button type="submit">Guardar cambios</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="usuariosModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarModal('usuariosModal')">&times;</span>
+      <h2>Gestión de Usuarios</h2>
+      <button class="bton" onclick="abrirModal('nuevoUsuarioModal')">Agregar Nuevo Usuario</button>
+      <h3>Usuarios Existentes:</h3>
+      <ul>
+        <li>Gerente: Juan Pérez</li>
+        <li>Vendedor: María Gómez</li>
+        <li>Vendedor: Carlos Ruiz</li>
+      </ul>
+      <input type="text" id="filtroUsuarios" placeholder="Buscar usuario..." onkeyup="filtrarUsuarios()">
+
+    </div>
+  </div>
+  
+  <!-- Modal para Agregar Nuevo Usuario -->
+  <div id="nuevoUsuarioModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarModal('nuevoUsuarioModal')">&times;</span>
+      <h2>Agregar Nuevo Usuario</h2>
+      <form id="nuevoUsuarioForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br><br>
+        <label for="rol">Rol:</label>
+        <select id="rol" name="rol" required>
+          <option value="gerente">Gerente</option>
+          <option value="vendedor">Vendedor</option>
+        </select>
+        <br><br>
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+        <button type="submit">Guardar Usuario</button>
+      </form>
+    </div>
+  </div>
+  
+
+
+
+
+  <!--------------------------------------------------------------- Java Script ---------------------------------------------------------------->
+ 
+  <script>
+    // Función para abrir un modal
+    function abrirModal(id) {
+      document.getElementById(id).style.display = "block";
+    }
+
+    // Función para cerrar un modal
+    function cerrarModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+
+    // Función para agregar un nuevo usuario (puedes implementar la lógica)
+    function agregarUsuario() {
+      alert("Función para agregar un nuevo usuario aún no implementada.");
+    }
+    // Función para manejar el formulario de nuevo usuario
+    document.getElementById('nuevoUsuarioForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Evita que la página se recargue
+
+    const nombre = document.getElementById('nombre').value;
+    const rol = document.getElementById('rol').value;
+    const email = document.getElementById('email').value;
+
+    // Agregar el nuevo usuario a la lista
+    const listaUsuarios = document.querySelector('#usuariosModal ul');
+    const nuevoUsuario = document.createElement('li');
+    nuevoUsuario.textContent = `${rol.charAt(0).toUpperCase() + rol.slice(1)}: ${nombre} (${email})`;
+    listaUsuarios.appendChild(nuevoUsuario);
+
+    // Cierra el modal y limpia el formulario
+    cerrarModal('nuevoUsuarioModal');
+    this.reset();
+    });
+  //------------------------------------Notificaciones -----------------------------------------------------------------------------------------------------
+    function agregarIndicadorNotificaciones() {
+    const campana = document.querySelector('.icono-campana');
+    const indicador = document.createElement('span');
+    indicador.classList.add('indicador');
+    indicador.textContent = '•';
+    campana.appendChild(indicador);
+  }
+  // Llama a esta función cuando haya nuevas notificaciones
+  agregarIndicadorNotificaciones();
+  //--------------------------------------Tema Oscuro ------------------------------------------------------
+  function cambiarTema() {
+  const tema = document.getElementById('tema').value;
+  document.body.className = tema === 'oscuro' ? 'tema-oscuro' : '';
+  }
+  document.getElementById('tema').addEventListener('change', cambiarTema);
+
+  //------------------------------ Tablero Principal---------------------------------------------------------
+  document.querySelectorAll('.panel-informativo').forEach((panel, index) => {
+  panel.style.animation = `fadeIn 0.5s ease ${index * 0.2}s forwards`;
+  });
+  //-------------------------------Acualizacion de tablas dinamicas------------------------------------------
+  function actualizarDatosInventario() {
+  const disponibles = Math.floor(Math.random() * 100);
+  const vendidos = Math.floor(Math.random() * 10);
+  const enRevision = Math.floor(Math.random() * 10);
+
+  document.querySelector('.total-num').textContent = disponibles + vendidos + enRevision;
+  document.querySelector('.disponibles').textContent = `🟢 ${disponibles}`;
+  document.querySelector('.vendidos').textContent = `🔴 ${vendidos}`;
+  document.querySelector('.revision').textContent = `🟡 ${enRevision}`;
+  } 
+  setInterval(actualizarDatosInventario, 60000); // Actualiza cada 60 segundos
+
+  // ----------------------------------Filtrado de usuarios ------------------------------------------------
+  function filtrarUsuarios() {
+  const filtro = document.getElementById('filtroUsuarios').value.toLowerCase();
+  const usuarios = document.querySelectorAll('#usuariosModal ul li');
+  usuarios.forEach(usuario => {
+  usuario.style.display = usuario.textContent.toLowerCase().includes(filtro) ? '' : 'none';
+ });
+  }
+  
+//----------------------------------Mensaje de confirmacion ------------------------------------------------
+function confirmarAccion(mensaje) {
+return confirm(mensaje);
+}
+document.querySelector('.btn-eliminar').addEventListener('click', () => {
+  if (confirmarAccion('¿Estás seguro de que deseas eliminar este usuario?')) {
+    alert('Usuario eliminado.');
+  }
+});
+
+
+  </script>

@@ -1,0 +1,267 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+/*----------------------------------------------Barra superior -------------------------------------------------------*/
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #302a37;
+  color: white;
+}
+.barra-superior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #19161d;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 80px;
+  width:150 px;
+  margin-right: 10px;
+}
+.btn-icon {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 5px;
+}
+
+.btn-icon:hover {
+  color: #f39c12;
+}
+
+.icono-img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+
+/*----------------------------------------------Body-------------------------------------------------------*/
+
+  .container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color:#463e51;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+
+  }
+  
+  input[type="text"], input[type="number"], input[type="file"], select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #9083a1;
+    color: white;
+  }
+  
+  .full-width {
+    grid-column: span 2;
+  }
+
+  /* Contenedor general */
+.full-width {
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en columna */
+  align-items: flex-start; /* Alinea los elementos al inicio (izquierda) */
+  margin-bottom: 15px;
+}
+
+/* Etiqueta */
+.full-width label {
+  margin-bottom: 5px; /* Da espacio entre el label y el textarea */
+  font-weight: bold; /* Opcional: para que el texto sea más visible */
+}
+
+/* Área de texto */
+.full-width textarea {
+  width: 100%; /* Haz que ocupe todo el ancho del contenedor */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical; /* Permite ajustar solo la altura */
+  box-sizing: border-box; /* Asegura que padding y border se incluyan en el ancho total */
+  background-color: #9083a1;
+  color: white;
+}
+
+
+  
+  .buttons {
+    display: flex;
+    gap: 10px;
+    flex-direction: row; 
+    justify-content: center; 
+    align-items: center; /* Alinea el botón verticalmente */
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+    height: auto; /* Ajusta automáticamente su altura */
+  }
+  
+
+  .btn{
+    font-size: 14px;
+    font-weight: bold;
+    background: linear-gradient(to bottom,  #41394b 0%,  #2a2531 100%);
+    color: white;
+    padding: 0.8em 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    width: 150px;
+    height: 50px;
+    line-height: 1; /* Evita que haya espacio adicional entre líneas */
+    white-space: nowrap; /* Evita el salto de línea */
+  }
+  
+ .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .btn:active {
+    transform: scale(0.95);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  .btn span {
+    display: block;
+    margin-left: 0.4em;
+    transition: all 0.3s;
+  }
+  
+  .btn svg {
+    width: 18px;
+    height: 18px;
+    fill: white;
+    transition: all 0.3s;
+    transition: transform 0.3s ease-in-out; /* Asegura la transición inicial */
+  }
+  
+  .btn .svg-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-right: 0.5em;
+    transition: all 0.3s;
+  }
+  
+  .btn .svg-wrapper {
+    background-color: rgba(255, 255, 255, 0.5);
+    
+  }
+  
+  .btn:hover svg {
+    transform: translateY(-5px); /* Sube 5px hacia arriba */
+    transition: transform 0.3s ease-in-out; /* Transición suave */
+  }
+
+  
+  .btn.clear {
+    font-size: 14px;
+    font-weight: bold;
+    background: linear-gradient(to bottom,  #41394b 0%,  #2a2531 100%);
+    color: white;
+    padding: 0.8em 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    width: 150px;
+    height: 50px;
+    line-height: 1; /* Evita que haya espacio adicional entre líneas */
+    white-space: nowrap; /* Evita el salto de línea */
+    
+  }
+  
+
+  .btn.clear:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .btn.clear:active {
+    transform: scale(0.95);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  .btn.clear span {
+    display: block;
+    margin-left: 0.4em;
+    transition: all 0.3s;
+  }
+  
+  .btn.clear svg {
+    width: 18px;
+    height: 18px;
+    fill: white;
+    transition: all 0.3s;
+    transition: transform 0.3s ease-in-out; /* Asegura la transición inicial */
+  }
+  
+  .btn.clear .svg-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-right: 0.5em;
+    transition: all 0.3s;
+  }
+  
+  .btn .svg-wrapper {
+    background-color: rgba(255, 255, 255, 0.5);
+    
+  }
+  
+  .btn:hover svg {
+    transform: translateY(-5px); /* Sube 5px hacia arriba */
+    transition: transform 0.3s ease-in-out; /* Transición suave */
+  }
+
